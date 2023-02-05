@@ -1,0 +1,116 @@
+{
+  "success": true,
+  "data": {
+    "id": "1",
+    "name": "kiwi-preset",
+    "config": {
+      "view_type": "GROUP_CALL",
+      "max_video_streams": {
+        "mobile": 0,
+        "desktop": 0
+      },
+      "max_screenshare_count": 0,
+      "media": {
+        "video": {
+          "quality": "hd",
+          "frame_rate": 30
+        },
+        "screenshare": {
+          "quality": "hd",
+          "frame_rate": 0
+        }
+      }
+    },
+    "permissions": {
+      "accept_waiting_requests": true,
+      "can_accept_production_requests": true,
+      "can_edit_display_name": true,
+      "can_spotlight": true,
+      "is_recorder": false,
+      "recorder_type": "NONE",
+      "disable_participant_audio": true,
+      "disable_participant_screensharing": true,
+      "disable_participant_video": true,
+      "kick_participant": true,
+      "pin_participant": true,
+      "can_record": true,
+      "can_livestream": true,
+      "waiting_room_type": "SKIP",
+      "plugins": {
+        "can_close": true,
+        "can_start": true,
+        "can_edit_config": true,
+        "config": "4de5a1b6-f730-4513-9ebe-16895971a32d"
+      },
+      "connected_meetings": {
+        "can_alter_connected_meetings": true,
+        "can_switch_connected_meetings": true,
+        "can_switch_to_parent_meeting": true
+      },
+      "polls": {
+        "can_create": true,
+        "can_vote": true,
+        "can_view": true
+      },
+      "media": {
+        "video": {
+          "can_produce": "ALLOWED"
+        },
+        "audio": {
+          "can_produce": "ALLOWED"
+        },
+        "screenshare": {
+          "can_produce": "ALLOWED"
+        }
+      },
+      "chat": {
+        "public": {
+          "can_send": true,
+          "text": true,
+          "files": true
+        },
+        "private": {
+          "can_send": true,
+          "can_receive": true,
+          "text": true,
+          "files": true
+        }
+      },
+      "hidden_participant": true,
+      "show_participant_list": true,
+      "can_change_participant_permissions": true
+    },
+    "ui": {
+      "design_tokens": {
+        "border_radius": "rounded",
+        "border_width": "thin",
+        "spacing_base": 4,
+        "theme": "dark",
+        "colors": {
+          "brand": {
+            "300": "#844d1c",
+            "400": "#9d5b22",
+            "500": "#b56927",
+            "600": "#d37c30",
+            "700": "#d9904f"
+          },
+          "background": {
+            "600": "#222222",
+            "700": "#1f1f1f",
+            "800": "#1b1b1b",
+            "900": "#181818",
+            "1000": "#141414"
+          },
+          "danger": "#FF2D2D",
+          "text": "#EEEEEE",
+          "text_on_brand": "#EEEEEE",
+          "success": "#62A504",
+          "video_bg": "#191919",
+          "warning": "#FFCD07"
+        },
+        "logo": "string"
+      },
+      "config_diff": {}
+    }
+  }
+}

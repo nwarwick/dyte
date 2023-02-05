@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "apple",
+      "name": "string",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    },
+    {
+      "id": "orange",
+      "name": "string",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "paging": {
+    "total_count": 2,
+    "start_offset": 1,
+    "end_offset": 1
+  }
+}

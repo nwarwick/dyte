@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "data": {
+    "sessions": [
+      {
+        "id": "carambola",
+        "associated_id": "string",
+        "meeting_display_name": "string",
+        "type": "meeting",
+        "status": "LIVE",
+        "live_participants": 0,
+        "max_concurrent_participants": 0,
+        "minutes_consumed": 0,
+        "organization_id": "string",
+        "started_at": "string",
+        "created_at": "string",
+        "updated_at": "string",
+        "ended_at": "string",
+        "meta": {}
+      },
+      {
+        "id": "pineapple",
+        "associated_id": "string",
+        "meeting_display_name": "string",
+        "type": "meeting",
+        "status": "LIVE",
+        "live_participants": 0,
+        "max_concurrent_participants": 0,
+        "minutes_consumed": 0,
+        "organization_id": "string",
+        "started_at": "string",
+        "created_at": "string",
+        "updated_at": "string",
+        "ended_at": "string",
+        "meta": {}
+      }
+    ]
+  }
+}

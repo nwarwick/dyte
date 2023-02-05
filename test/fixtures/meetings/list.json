@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "nectarine",
+      "preferred_region": "ap-south-1",
+      "record_on_start": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "live_stream_on_start": true
+    },
+    {
+      "id": "raspberry",
+      "preferred_region": "ap-south-1",
+      "record_on_start": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "live_stream_on_start": true
+    }
+  ],
+  "paging": {
+    "total_count": 2,
+    "start_offset": 1,
+    "end_offset": 1
+  }
+}

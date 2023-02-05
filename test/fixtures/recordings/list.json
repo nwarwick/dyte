@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "apple",
+      "download_url": "http://example.com",
+      "download_url_expiry": "2019-08-24T14:15:22Z",
+      "file_size": 0,
+      "session_id": "1ffd059c-17ea-40a8-8aef-70fd0307db82",
+      "output_file_name": "string",
+      "status": "INVOKED",
+      "invoked_time": "2019-08-24T14:15:22Z",
+      "started_time": "2019-08-24T14:15:22Z",
+      "stopped_time": "2019-08-24T14:15:22Z",
+      "storage_config": {
+        "type": "aws",
+        "secret_key": "string",
+        "bucket": "string",
+        "region": "us-east-1",
+        "path": "string"
+      },
+      "meeting": {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "preferred_region": "ap-south-1",
+        "record_on_start": true,
+        "created_at": "2019-08-24T14:15:22Z",
+        "updated_at": "2019-08-24T14:15:22Z",
+        "live_stream_on_start": true,
+        "status": "ACTIVE"
+      }
+    }
+  ]
+}
