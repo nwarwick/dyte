@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "meeting": {
+      "id": "1",
+      "title": "Meeting 1",
+      "roomName": "string",
+      "status": "LIVE",
+      "createdAt": "2019-08-24T14:15:22Z",
+      "participants": [
+        null
+      ]
+    }
+  }
+}
