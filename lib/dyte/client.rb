@@ -1,7 +1,8 @@
 require "minitest/autorun"
 module Dyte
   class Client
-    BASE_URL = "https://api.cluster.dyte.in/v1/organizations"
+    BASE_URL_V1 = "https://api.cluster.dyte.in/v1/organizations"
+    BASE_URL = "https://api.cluster.dyte.in/v2"
 
     attr_accessor :organization_id, :api_key, :adapter
 
@@ -15,13 +16,38 @@ module Dyte
       MeetingsResource.new(self)
     end
 
+    def presets
+      PresetsResource.new(self)
+    end
+
+    def participants
+      ParticipantsResource.new(self)
+    end
+
     def sessions
+      SessionsResource.new(self)
+    end
+
+    def recordings
+      RecordingsResource.new(self)
+    end
+
+    def connection_v1
+      @connection ||= Faraday.new("#{BASE_URL}/#{@organization_id}") do |conn|
+        conn.headers["Authorization"] = @api_key
+
+        conn.request :json
+
+        conn.response :json, content_type: "application/json"
+      end
     end
 
     def connection
-      @connection ||= Faraday.new("#{BASE_URL}/#{@organization_id}") do |conn|
-        conn.headers["Authorization"] = @api_key
-        conn.headers["Content-Type"] = "application/json"
+      auth_token = Base64.strict_encode64("#{@organization_id}:#{@api_key}")
+      @connection ||= Faraday.new(BASE_URL) do |conn|
+        conn.headers["Authorization"] = "Basic #{auth_token}"
+
+        conn.request :json
 
         conn.response :json, content_type: "application/json"
       end

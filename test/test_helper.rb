@@ -3,7 +3,6 @@ require "dyte"
 require "minitest/autorun"
 require "faraday"
 require "json"
-require "pry"
 require "webmock/minitest"
 
 class Minitest::Test

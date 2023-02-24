@@ -1,0 +1,95 @@
+{
+  "success": true,
+  "data": {
+    "participant": {
+      "id": "string",
+      "user_id": "blueberry",
+      "custom_participant_id": "string",
+      "display_name": "string",
+      "role": "string",
+      "joined_at": "string",
+      "left_at": "string",
+      "duration": 0,
+      "created_at": "string",
+      "updated_at": "string",
+      "peer_stats": {
+        "config": "string",
+        "status": "string",
+        "device_info": {
+          "browser": "string",
+          "browser_version": "string",
+          "cpus": 0,
+          "engine": "string",
+          "is_mobile": true,
+          "memory": 0,
+          "os": "string",
+          "os_version": "string",
+          "sdk_name": "string",
+          "sdk_version": "string",
+          "user_agent": "string",
+          "webgl_support": "string"
+        },
+        "events": [
+          {
+            "timestamp": "string",
+            "type": "string"
+          }
+        ],
+        "ip_information": {
+          "city": "string",
+          "country": "string",
+          "ip_location": "string",
+          "ipv4": "string",
+          "org": "string",
+          "portal": "string",
+          "region": "string",
+          "timezone": "string"
+        },
+        "precall_network_information": {
+          "backend_rtt": 0,
+          "turn_connectivity": true,
+          "effective_networktype": "string",
+          "throughtput": 0,
+          "jitter": 0,
+          "rtt": 0,
+          "reflexive_connectivity": true,
+          "relay_connectivity": true,
+          "fractional_loss": 0
+        }
+      },
+      "quality_stats": [
+        {
+          "peer_id": "string",
+          "audio_bandwidth": 0,
+          "video_bandwidth": 0,
+          "average_quality": 0,
+          "start": "string",
+          "end": "string",
+          "audio_packet_loss": 0,
+          "video_packet_loss": 0,
+          "audio_stats": [
+            {
+              "timestamp": "string",
+              "concealment_events": 0,
+              "packets_lost": 0,
+              "jitter": 0,
+              "quality": 0
+            }
+          ],
+          "video_stats": [
+            {
+              "timestamp": "string",
+              "frame_width": 0,
+              "frame_height": 0,
+              "frames_dropped": 0,
+              "frames_per_second": 0,
+              "packets_lost": 0,
+              "jitter": 0,
+              "quality": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

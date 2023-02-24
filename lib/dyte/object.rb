@@ -11,7 +11,7 @@ module Dyte
         OpenStruct.new(obj.map { |key, val| [key, to_ostruct(val)] }.to_h)
       elsif obj.is_a?(Array)
         obj.map { |o| to_ostruct(o) }
-      else 
+      else
         obj
       end
     end

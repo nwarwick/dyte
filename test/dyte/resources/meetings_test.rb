@@ -8,55 +8,45 @@ class MeetingsResourceTest < Minitest::Test
   end
 
   def test_list
-    stub_request(:get, "#{Dyte::Client::BASE_URL}/#{@organization_id}/meetings")
+    stub = stub_request(:get, "#{Dyte::Client::BASE_URL}/meetings")
       .to_return(body: File.new("test/fixtures/meetings/list.json"), headers: {content_type: "application/json"})
 
-    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id, adapter: :test)
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
     meetings = client.meetings.list
     assert_equal Dyte::Collection, meetings.class
     assert_equal Dyte::Meeting, meetings.data.first.class
-    assert_equal 2, meetings.total
+    assert_equal 2, meetings.total_count
+    assert_requested stub # TODO: Confirm this is working by removing the request
   end
 
   def test_fetch
-    stub_request(:get, "#{Dyte::Client::BASE_URL}/#{@organization_id}/meetings/1")
+    stub_request(:get, "#{Dyte::Client::BASE_URL}/meetings/1")
       .to_return(body: File.new("test/fixtures/meetings/fetch.json"), headers: {content_type: "application/json"})
 
-    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id, adapter: :test)
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
     meeting = client.meetings.fetch(meeting_id: 1)
     assert_equal Dyte::Meeting, meeting.class
-    assert_equal "Meeting 1", meeting.title
+    assert_equal "apricot", meeting.id
   end
 
   def test_create
-    body = {
-      title: "string",
-      presetName: "string",
-      authorization: {
-        waitingRoom: false,
-        closed: false
-      },
-      recordOnStart: false,
-      liveStreamOnStart: false
-    }
-
-    stub_request(:post, "#{Dyte::Client::BASE_URL}/#{@organization_id}/meeting")
+    stub_request(:post, "#{Dyte::Client::BASE_URL}/meetings")
       .to_return(body: File.new("test/fixtures/meetings/create.json"), headers: {content_type: "application/json"})
 
-    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id, adapter: :test)
-    meeting = client.meetings.create(body)
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    meeting = client.meetings.create(title: "Mango Meeting", preset_name: "Mango Preset")
     assert_equal Dyte::Meeting, meeting.class
-    assert_equal "Meeting 1", meeting.title
+    assert_equal "cherry", meeting.id
   end
 
   def test_update
     body = {title: "updated title"}
     meeting_id = "d8b1a76b-fcd8-413d-8a59-0017e825cfa3"
 
-    stub_request(:put, "#{Dyte::Client::BASE_URL}/#{@organization_id}/meetings/#{meeting_id}")
+    stub_request(:put, "#{Dyte::Client::BASE_URL}/meetings/#{meeting_id}")
       .to_return(body: File.new("test/fixtures/meetings/update.json"), headers: {content_type: "application/json"})
 
-    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id, adapter: :test)
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
     assert client.meetings.update(meeting_id: meeting_id, body: body)
   end
 end

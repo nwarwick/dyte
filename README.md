@@ -1,13 +1,11 @@
 # Dyte
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dyte`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A gem that wraps v2 of the [Dyte API](https://docs.dyte.io/api/#/) to make it easy to use in Ruby applications.
 
 ## Installation
 
 Add this line to your application's Gemfile:
-
+****
 ```ruby
 gem 'dyte'
 ```
@@ -23,6 +21,24 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+
+## Resources
+### Meetings
+```ruby
+client.meetings.list
+client.meetings.fetch(meeting_id: "id")
+client.meetings.create({})
+client.meetings.update(meeting_id: "id", {})
+```
+### Presets
+```ruby
+client.presets.list
+client.presets.fetch(preset_id: "id")
+client.presets.create({})
+client.presets.update(preset_id: "id", {})
+```
+### Sessions
+### Participants
 
 ## Development
 

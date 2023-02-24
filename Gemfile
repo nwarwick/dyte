@@ -11,8 +11,5 @@ group :development do
   gem "minitest", "~> 5.17"
   gem "webmock", "~> 3.18"
   gem "solargraph", "~> 0.48.0"
-
-  platforms :mri do
-    gem "pry-byebug"
-  end
+  gem "debug"
 end
