@@ -1,6 +1,9 @@
 # Dyte
 
 A gem that wraps v2 of the [Dyte API](https://docs.dyte.io/api/#/) to make it easy to use in Ruby applications.
+Please note that some resources are not yet implemented. This is due to the fact that v2 of the Dyte API is incomplete. Once the Dyte team has finalized the response structure the remaining resources will be implemented.
+
+Bugs reports and pull requests are welcome! ❤️
 
 ## Installation
 
@@ -48,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dyte.
+Contribution guidelines TBD. For now just open a PR and we'll figure it out.
 
 ## License
 
