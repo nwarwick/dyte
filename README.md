@@ -8,7 +8,6 @@ Bugs reports and pull requests are welcome! ❤️
 ## Installation
 
 Add this line to your application's Gemfile:
-****
 ```ruby
 gem 'dyte'
 ```
