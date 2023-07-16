@@ -32,6 +32,10 @@ module Dyte
       RecordingsResource.new(self)
     end
 
+    def active_sessions
+      ActiveSessionsResource.new(self)
+    end
+
     def connection_v1
       @connection ||= Faraday.new("#{BASE_URL}/#{@organization_id}") do |conn|
         conn.headers["Authorization"] = @api_key
