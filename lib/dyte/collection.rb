@@ -29,12 +29,10 @@ module Dyte
       @end_offset = end_offset
     end
 
-    private_class_method
-
     # The Dyte API does not have a consistent response structure. This method accounts for that.
     def self.parse_body(body:, type:, key: nil)
-      if body.dig("data").is_a?(Array)
-        body.dig("data").map { |attrs| type.new(attrs) }
+      if body["data"].is_a?(Array)
+        body["data"].map { |attrs| type.new(attrs) }
       else
         body.dig("data", key).map { |attrs| type.new(attrs) }
       end
