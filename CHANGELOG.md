@@ -1,5 +1,9 @@
-## [Unreleased]
+# What's Changed?
 
-## [0.1.0] - 2023-02-05
+## 0.1.1
+
+- Add compatibility for Faraday 2
+
+## 0.1.0
 
 - Initial release
