@@ -1,6 +1,5 @@
 require "faraday"
 require "json"
-require "debug"
 require "dyte/version"
 require "dyte/client"
 require "dyte/collection"

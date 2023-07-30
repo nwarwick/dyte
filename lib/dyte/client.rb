@@ -1,4 +1,3 @@
-require "minitest/autorun"
 module Dyte
   class Client
     BASE_URL_V1 = "https://api.cluster.dyte.in/v1/organizations"
