@@ -15,3 +15,5 @@ Gemfile.lock
 
 # ASDF version file
 .tool-versions
+
+*.gem
