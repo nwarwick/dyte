@@ -20,5 +20,9 @@ module Dyte
     def update_old(meeting_id:, body: {})
       Meeting.new put_request("meetings/#{meeting_id}", body: body).body.dig("data", "meeting")
     end
+
+    def token(meeting_id:, participant_id:, **attributes)
+      Meeting.new post_request("meetings/#{meeting_id}/participants/#{participant_id}/token", body: attributes).body.dig("data")
+    end
   end
 end
