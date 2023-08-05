@@ -31,6 +31,7 @@ client.meetings.list
 client.meetings.fetch(meeting_id: "id")
 client.meetings.create({})
 client.meetings.update(meeting_id: "id", {})
+client.meetings.regenerate_token(meeting_id: "id", participant_id: "id")
 ```
 ### Presets
 ```ruby
