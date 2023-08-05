@@ -50,14 +50,14 @@ class MeetingsResourceTest < Minitest::Test
     assert client.meetings.update(meeting_id: meeting_id, body: body)
   end
 
-  def test_token
+  def test_regenerate_token
     meeting_id = "d8b1a76b-fcd8-413d-8a59-0017e825cfa3"
 
     stub_request(:post, "#{Dyte::Client::BASE_URL}/meetings/#{meeting_id}/participants/1/token")
       .to_return(body: File.new("test/fixtures/meetings/token.json"), headers: {content_type: "application/json"})
 
     client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
-    meeting = client.meetings.token(meeting_id: meeting_id, participant_id: 1)
+    meeting = client.meetings.regenerate_token(meeting_id: meeting_id, participant_id: 1)
     assert_equal Dyte::Meeting, meeting.class
     assert_equal "token_str", meeting.token
   end
