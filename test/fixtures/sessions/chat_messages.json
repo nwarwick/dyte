@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": {
+    "chat_download_url": "string",
+    "chat_download_url_expiry": "string"
+  }
+}

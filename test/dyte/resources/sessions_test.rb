@@ -27,4 +27,22 @@ class SessionsResourceTest < Minitest::Test
     assert_equal Dyte::Session, session.class
     assert_equal "apricot", session.id
   end
+
+  def test_chat_messages
+    stub_request(:get, "#{Dyte::Client::BASE_URL}/sessions/1/chat")
+      .to_return(body: File.new("test/fixtures/sessions/chat_messages.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    session = client.sessions.chat_messages(session_id: 1)
+    assert_equal Dyte::Session, session.class
+  end
+
+  def test_participant_details
+    stub_request(:get, "#{Dyte::Client::BASE_URL}/sessions/1/participants/1")
+      .to_return(body: File.new("test/fixtures/sessions/participant_details.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    session = client.sessions.participant_details(session_id: 1, participant_id: 1)
+    assert_equal Dyte::Session, session.class
+  end
 end
