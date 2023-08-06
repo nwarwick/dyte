@@ -41,6 +41,13 @@ client.presets.create({})
 client.presets.update(preset_id: "id", {})
 ```
 ### Sessions
+```ruby
+client.sessions.list
+client.sessions.fetch(session_id: "id")
+client.sessions.fetch_participants(session_id: "id")
+client.sessions.participant_details(session_id: "id", participant_id: "id")
+client.sessions.chat_messages(session_id: "id")
+```
 ### Participants
 
 ## Development
