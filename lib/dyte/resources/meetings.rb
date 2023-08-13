@@ -24,5 +24,10 @@ module Dyte
     def regenerate_token(meeting_id:, participant_id:, **attributes)
       Meeting.new post_request("meetings/#{meeting_id}/participants/#{participant_id}/token", body: attributes).body.dig("data")
     end
+
+    def fetch_participants(meeting_id:)
+      response = get_request("meetings/#{meeting_id}/participants")
+      Collection.from_response(response, type: Participant)
+    end
   end
 end
