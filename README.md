@@ -31,6 +31,7 @@ TODO: Write usage instructions here
 ```ruby
 # Returns all meetings in an organization.
 client.meetings.list
+
 # Returns a meeting in an organization for the given meeting ID.
 client.meetings.fetch(meeting_id: "id")
 
