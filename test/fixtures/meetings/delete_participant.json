@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "data": {
+    "custom_participant_id": "string",
+    "preset_id": "8384f842-5f4b-4499-a68f-d027dfe5de2e",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  }
+}

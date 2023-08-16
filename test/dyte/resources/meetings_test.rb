@@ -72,4 +72,13 @@ class MeetingsResourceTest < Minitest::Test
     assert_equal Dyte::Participant, participants.data.first.class
     assert_equal 30, participants.total_count
   end
+
+  def test_delete_participant
+    stub_request(:delete, "#{Dyte::Client::BASE_URL}/meetings/1/participants/1337")
+      .to_return(body: File.new("test/fixtures/meetings/delete_participant.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    response = client.meetings.delete_participant(meeting_id: 1, participant_id: 1337)
+    assert_equal 200, response.status
+  end
 end
