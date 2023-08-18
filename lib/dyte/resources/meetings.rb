@@ -29,5 +29,9 @@ module Dyte
       response = get_request("meetings/#{meeting_id}/participants")
       Collection.from_response(response, type: Participant)
     end
+
+    def delete_participant(meeting_id:, participant_id:)
+      delete_request("meetings/#{meeting_id}/participants/#{participant_id}")
+    end
   end
 end
