@@ -35,16 +35,6 @@ module Dyte
       ActiveSessionsResource.new(self)
     end
 
-    def connection_v1
-      @connection ||= Faraday.new("#{BASE_URL}/#{@organization_id}") do |conn|
-        conn.headers["Authorization"] = @api_key
-
-        conn.request :json
-
-        conn.response :json, content_type: "application/json"
-      end
-    end
-
     def connection
       auth_token = Base64.strict_encode64("#{@organization_id}:#{@api_key}")
       @connection ||= Faraday.new(BASE_URL) do |conn|
