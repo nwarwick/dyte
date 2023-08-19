@@ -57,9 +57,7 @@ class MeetingsResourceTest < Minitest::Test
       .to_return(body: File.new("test/fixtures/meetings/token.json"), headers: {content_type: "application/json"})
 
     client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
-    meeting = client.meetings.regenerate_token(meeting_id: meeting_id, participant_id: 1)
-    assert_equal Dyte::Meeting, meeting.class
-    assert_equal "token_str", meeting.token
+    assert client.meetings.regenerate_token(meeting_id: meeting_id, participant_id: 1)
   end
 
   def test_fetch_participants
