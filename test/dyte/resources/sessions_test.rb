@@ -33,8 +33,7 @@ class SessionsResourceTest < Minitest::Test
       .to_return(body: File.new("test/fixtures/sessions/chat_messages.json"), headers: {content_type: "application/json"})
 
     client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
-    session = client.sessions.chat_messages(session_id: 1)
-    assert_equal Dyte::Session, session.class
+    assert client.sessions.chat_messages(session_id: 1)
   end
 
   def test_participant_details
@@ -42,7 +41,6 @@ class SessionsResourceTest < Minitest::Test
       .to_return(body: File.new("test/fixtures/sessions/participant_details.json"), headers: {content_type: "application/json"})
 
     client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
-    session = client.sessions.participant_details(session_id: 1, participant_id: 1)
-    assert_equal Dyte::Session, session.class
+    assert client.sessions.participant_details(session_id: 1, participant_id: 1)
   end
 end

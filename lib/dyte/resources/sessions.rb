@@ -16,11 +16,11 @@ module Dyte
     end
 
     def participant_details(session_id:, participant_id:)
-      Session.new get_request("sessions/#{session_id}/participants/#{participant_id}").body.dig("data")
+      get_request("sessions/#{session_id}/participants/#{participant_id}").body.dig("data")
     end
 
     def chat_messages(session_id:)
-      Session.new get_request("sessions/#{session_id}/chat").body.dig("data")
+      get_request("sessions/#{session_id}/chat").body.dig("data")
     end
   end
 end
