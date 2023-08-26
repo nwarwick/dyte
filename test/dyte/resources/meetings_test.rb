@@ -84,10 +84,12 @@ class MeetingsResourceTest < Minitest::Test
     attributes = {name: "Jane Doe", picture: "http://example.com", preset_name: "string"}.to_json
 
     stub_request(:patch, "#{Dyte::Client::BASE_URL}/meetings/1/participants/1337")
-      .to_return(body: File.new("test/fixtures/meetings/delete_participant.json"), headers: {content_type: "application/json"})
+      .to_return(body: File.new("test/fixtures/meetings/edit_participant_details.json"), headers: {content_type: "application/json"})
 
     client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
-    response = client.meetings.edit_participant_details(meeting_id: 1, participant_id: 1337, attributes: attributes)
-    assert_equal 200, response.status
+    participant = client.meetings.edit_participant_details(meeting_id: 1, participant_id: 1337, attributes: attributes)
+    assert_equal "string", participant.name
+    assert_equal "http://example.com", participant.picture
+    assert_equal "string", participant.token
   end
 end
