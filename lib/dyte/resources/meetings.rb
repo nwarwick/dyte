@@ -33,5 +33,10 @@ module Dyte
     def delete_participant(meeting_id:, participant_id:)
       delete_request("meetings/#{meeting_id}/participants/#{participant_id}")
     end
+
+    def edit_participant_details(meeting_id:, participant_id:, attributes:)
+      response = patch_request("meetings/#{meeting_id}/participants/#{participant_id}", body: attributes)
+      Participant.new response.body.dig("data")
+    end
   end
 end
