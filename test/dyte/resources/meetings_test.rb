@@ -92,4 +92,16 @@ class MeetingsResourceTest < Minitest::Test
     assert_equal "http://example.com", participant.picture
     assert_equal "string", participant.token
   end
+
+  def test_fetch_participant_details
+    stub_request(:get, "#{Dyte::Client::BASE_URL}/meetings/1/participants/1337")
+      .to_return(body: File.new("test/fixtures/meetings/fetch_participant_details.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    participant = client.meetings.fetch_participant_details(meeting_id: 1, participant_id: 1337)
+    assert_instance_of Dyte::Participant, participant
+    assert_equal "string", participant.name
+    assert_equal "http://example.com", participant.picture
+    assert_equal "string", participant.preset_name
+  end
 end
