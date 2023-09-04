@@ -46,6 +46,12 @@ client.meetings.regenerate_token(meeting_id: "id", participant_id: "id")
 
 # Returns all participants for the given meeting ID.
 client.meetings.fetch_participants(meeting_id: "id") 
+
+# Returns a participant for the given meeting and participant ID.
+client.meetings.fetch_participant_details(meeting_id: "id", participant_id: "id")
+
+# Edits a participant for the given meeting and participant ID.
+client.meetings.edit_participant_details(meeting_id: "id", participant_id: "id")
 ```
 ### Presets
 
