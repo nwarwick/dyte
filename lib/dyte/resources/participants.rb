@@ -1,3 +1,5 @@
+# This module is deprecated in favour of adding participant actions to the meetings resource. This is for the purpose
+# of better following how Dyte's API is structured. This module will be removed in a future release.
 module Dyte
   class ParticipantsResource < Resource
     def list(session_id:, **params)
