@@ -73,8 +73,15 @@ client.sessions.chat_messages(session_id: "id")
 ### Participants
 
 ## Development
+### Setup
+After checking out the repo run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. 
 
-After checking out the repo run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Running Locally
+It can be convenient to run the gem locally while developing, to test changes. To do so, follow these steps:
+1) Run `bin/console` from the root directory
+1) Instantiate the client (enter your Dyte credentials) `client = Client.new(organization_id: '1234', api_key: '1234')`
+1) Run a test command, for example: `client.participants.list(session_id: 1)`
+
 
 ## Contributing
 
