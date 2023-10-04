@@ -43,5 +43,10 @@ module Dyte
       response = patch_request("meetings/#{meeting_id}/participants/#{participant_id}", body: attributes)
       Participant.new response.body.dig("data")
     end
+
+    def add_participant(meeting_id:, **attributes)
+      response = post_request("meetings/#{meeting_id}/participants", body: attributes)
+      Participant.new response.body.dig("data")
+    end
   end
 end
