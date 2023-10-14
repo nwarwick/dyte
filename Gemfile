@@ -10,6 +10,5 @@ group :development do
   gem "standard"
   gem "minitest", "~> 5.17"
   gem "webmock", "~> 3.18"
-  gem "solargraph", "~> 0.48.0"
   gem "debug"
 end
