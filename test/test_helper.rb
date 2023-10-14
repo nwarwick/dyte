@@ -4,6 +4,7 @@ require "minitest/autorun"
 require "faraday"
 require "json"
 require "webmock/minitest"
+require "debug"
 
 class Minitest::Test
 end
