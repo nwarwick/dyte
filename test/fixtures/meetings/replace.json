@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "title": "Mango Meeting",
+    "preferred_region": "ap-south-1",
+    "created_at": "2019-08-24T14:15:22Z",
+    "record_on_start": true,
+    "updated_at": "2019-08-24T14:15:22Z",
+    "live_stream_on_start": true,
+    "status": "ACTIVE",
+    "recording_config": {
+      "max_seconds": 60,
+      "file_name_prefix": "string",
+      "video_config": {
+        "codec": "H264",
+        "width": 1280,
+        "height": 720,
+        "watermark": {
+          "url": "http://example.com",
+          "size": {
+            "width": 1,
+            "height": 1
+          },
+          "position": "left top"
+        }
+      },
+      "audio_config": {
+        "codec": "AAC",
+        "channel": "stereo"
+      },
+      "storage_config": {
+        "type": "aws",
+        "secret": "string",
+        "bucket": "string",
+        "region": "us-east-1",
+        "path": "string",
+        "auth_method": "KEY",
+        "username": "string",
+        "password": "string",
+        "host": "string",
+        "port": 0,
+        "private_key": "string"
+      },
+      "dyte_bucket_config": {
+        "enabled": true
+      },
+      "live_streaming_config": {
+        "rtmp_url": "rtmp://a.rtmp.youtube.com/live2"
+      }
+    }
+  }
+}
