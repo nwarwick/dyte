@@ -73,6 +73,35 @@ client.sessions.fetch_participants(session_id: "id")
 client.sessions.participant_details(session_id: "id", participant_id: "id")
 client.sessions.chat_messages(session_id: "id")
 ```
+### Organizations
+
+```ruby
+# Creates a new organization. The authenticated user becomes the owner of the organization.
+client.organizations.create(
+    {
+        "name": "Cool Org",
+        "contact": "778-330-2389",
+        "website": "https://www.dyte.io",
+        "feature_flags": [
+            "string"
+        ],
+        "preferred_region": "ap-south-1"
+    }
+)
+
+# Updates organization details for the given organization ID. The user must be the organization's owner.
+client.organizations.update(organization_id: "id", 
+    {
+        "name": "A much better name",
+        "contact": "string",
+        "website": "https://www.dyte.io",
+        "feature_flags": [
+            "string"
+        ],
+        "preferred_region": "ap-south-1"
+    }
+)
+```
 ### Participants
 
 ## Development
