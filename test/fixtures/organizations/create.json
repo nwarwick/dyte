@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "data": {
+    "id": "bbb0e958-93ce-41c7-9745-16e7aa51c568",
+    "name": "Dyte",
+    "contact": "778-330-2389",
+    "website": "https://www.dyte.io",
+    "apikey": "4deeb3d8e8b5e74d5522",
+    "preferred_region": "us-east-1",
+    "feature_flags": [
+      "string"
+    ],
+    "created_at": "2022-05-28T08:18:34.804Z",
+    "updated_at": "2022-05-28T08:18:34.804Z"
+  }
+}
