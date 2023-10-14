@@ -15,4 +15,14 @@ class OrganizationsResourceTest < Minitest::Test
     assert_equal Dyte::Organization, organization.class
     assert_equal "Dyte", organization.name
   end
+
+  def test_update
+    body = {name: "New and Better Name"}
+    organization_id = "bbb0e958-93ce-41c7-9745-16e7aa51c568"
+    stub_request(:patch, "#{Dyte::Client::BASE_URL}/orgs/#{organization_id}")
+      .to_return(body: File.new("test/fixtures/organizations/update.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    assert client.organizations.update(organization_id: organization_id, body: body)
+  end
 end
