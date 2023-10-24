@@ -25,4 +25,14 @@ class OrganizationsResourceTest < Minitest::Test
     client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
     assert client.organizations.update(organization_id: organization_id, body: body)
   end
+
+  def test_fetch
+    stub_request(:get, "#{Dyte::Client::BASE_URL}/orgs/#{@organization_id}")
+      .to_return(body: File.new("test/fixtures/organizations/fetch.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    organization = client.organizations.fetch(organization_id: @organization_id)
+    assert_equal "New and Better Name", organization.name
+    assert_equal "https://www.dyte.io", organization.website
+  end
 end
