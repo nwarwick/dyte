@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "id": "blueberry",
+    "name": "All events webhook",
+    "url": "https://webhook.site/b23a5bbd-c7b0-4ced-a9e2-78ae7889897e",
+    "events": [
+      "meeting.started",
+      "meeting.ended",
+      "meeting.participantJoined",
+      "meeting.participantLeft",
+      "meeting.chatSynced",
+      "recording.statusUpdate",
+      "livestreaming.statusUpdate"
+    ],
+    "created_at": "2022-05-28T07:01:53.075Z",
+    "updated_at": "2022-05-28T07:01:53.075Z",
+    "enabled": true
+  }
+}
