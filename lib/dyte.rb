@@ -15,6 +15,7 @@ require "dyte/objects/session"
 require "dyte/objects/recording"
 require "dyte/objects/active_session"
 require "dyte/objects/organization"
+require "dyte/objects/webhook"
 
 # Resources
 require "dyte/resources/meetings"
@@ -24,6 +25,7 @@ require "dyte/resources/sessions"
 require "dyte/resources/recordings"
 require "dyte/resources/active_sessions"
 require "dyte/resources/organizations"
+require "dyte/resources/webhooks"
 
 module Dyte
 end

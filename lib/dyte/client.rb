@@ -39,6 +39,10 @@ module Dyte
       OrganizationsResource.new(self)
     end
 
+    def webhooks
+      WebhooksResource.new(self)
+    end
+
     def connection
       auth_token = Base64.strict_encode64("#{@organization_id}:#{@api_key}")
       @connection ||= Faraday.new(BASE_URL) do |conn|
