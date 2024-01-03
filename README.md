@@ -55,6 +55,9 @@ client.meetings.edit_participant_details(meeting_id: "id", participant_id: "id")
 
 # Adds a participant to a meeting.
 client.meetings.add_participant(meeting_id: "id", participant_id: "id")
+
+# Replaces specified details for the given meeting ID.
+client.meetings.replace( meeting_id: "id", {})
 ```
 ### Presets
 

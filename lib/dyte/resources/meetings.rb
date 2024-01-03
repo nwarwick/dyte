@@ -48,5 +48,10 @@ module Dyte
       response = post_request("meetings/#{meeting_id}/participants", body: attributes)
       Participant.new response.body.dig("data")
     end
+
+    def replace(meeting_id:, **attributes)
+      response = put_request("meetings/#{meeting_id}", body: attributes)
+      Meeting.new response.body.dig("data")
+    end
   end
 end

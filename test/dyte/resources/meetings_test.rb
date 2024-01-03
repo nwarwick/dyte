@@ -116,4 +116,14 @@ class MeetingsResourceTest < Minitest::Test
     assert_equal "http://example.com", participant.picture
     assert_equal "string", participant.token
   end
+
+  def test_replace
+    stub_request(:put, "#{Dyte::Client::BASE_URL}/meetings/1")
+      .to_return(body: File.new("test/fixtures/meetings/replace.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+
+    meeting = client.meetings.replace(meeting_id: 1, title: "Mango Meeting")
+    assert_equal "Mango Meeting", meeting.title
+  end
 end
