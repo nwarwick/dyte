@@ -109,6 +109,9 @@ client.organizations.update(organization_id: "id",
 ```ruby
 # Returns the Webhook relating to the given ID
 client.webhooks.fetch(webhook_id: "id")
+
+# Returns all Webhooks for a given organization
+client.webhooks.list
 ```
 
 ### Participants
