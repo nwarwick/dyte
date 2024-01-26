@@ -112,6 +112,24 @@ client.webhooks.fetch(webhook_id: "id")
 
 # Returns all Webhooks for a given organization
 client.webhooks.list
+
+# Creates a new webhook 
+client.webhooks.create(
+    {
+        "name": "Cool Webhook",
+        "url": "https://webhook.site/b23a5bbd-c7b0-4ced-a9e2-78ae7889897e",
+        "events": [
+            "meeting.started",
+            "meeting.ended",
+            "meeting.participantJoined",
+            "meeting.participantLeft",
+            "meeting.chatSynced",
+            "recording.statusUpdate",
+            "livestreaming.statusUpdate"
+        ],
+        "enabled": true
+    }
+)
 ```
 
 ### Participants

@@ -26,4 +26,14 @@ class WebhooksResourceTest < Minitest::Test
     assert_equal Dyte::Webhook, webhooks.data.first.class
     assert_equal "cherry", webhooks.data.first.id
   end
+
+  def test_create
+    stub_request(:post, "#{Dyte::Client::BASE_URL}/webhooks")
+      .to_return(body: File.new("test/fixtures/meetings/create.json"), headers: {content_type: "application/json"})
+
+    client = Dyte::Client.new(api_key: @api_key, organization_id: @organization_id)
+    webhook = client.webhooks.create(name: "Mango Webhook", url: "notarealurl")
+    assert_equal Dyte::Webhook, webhook.class
+    assert_equal "cherry", webhook.id
+  end
 end
