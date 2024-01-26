@@ -6,9 +6,9 @@ source "https://rubygems.org"
 gemspec
 
 group :development do
-  gem "rake", "~> 13.0"
+  gem "rake", "~> 13.1"
   gem "standard"
-  gem "minitest", "~> 5.17"
-  gem "webmock", "~> 3.18"
+  gem "minitest", "~> 5.21"
+  gem "webmock", "~> 3.19"
   gem "debug"
 end
